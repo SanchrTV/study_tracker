@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Study Progress Tracker</title>
+</head>
+<body>
+    <h1>Study Tasks</h1>
+    <ul>
+        {% for task in tasks %}
+            <li>{{ task.title }} - {{ task.due_date }} - {% if task.completed %}Completed{% else %}Not Completed{% endif %}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'add_task' %}">Add New Task</a>
+</body>
+</html>
